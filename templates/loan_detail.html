@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #ddd;">
+    <h1 style="font-family: Arial, sans-serif; color: #333; text-align: center; margin-bottom: 20px;">
+      Loan Details
+    </h1>
+
+    <div style="font-family: Arial, sans-serif; color: #333; font-size: 16px; margin-bottom: 15px;">
+      <p><strong>Customer:</strong> {{ loan.customer.name }}</p>
+      <p><strong>Item:</strong> {{ loan.item.name }}</p>
+      <p><strong>Amount Borrowed:</strong> {{ loan.borrowed_amount }}</p>
+      <p><strong>Due Date:</strong> {{ loan.due_date }}</p>
+      <p><strong>Status:</strong> {{ loan.status }}</p>
+      <p><strong>Notes:</strong> {{ loan.notes }}</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="{% url 'loan_update' loan.id %}" style="background-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 4px; text-decoration: none; margin-right: 10px;">
+        Edit
+      </a>
+      <a href="{% url 'loan_delete' loan.id %}" style="background-color: #dc3545; color: white; padding: 10px 20px; font-size: 16px; border-radius: 4px; text-decoration: none;">
+        Delete
+      </a>
+    </div>
+  </div>
+{% endblock %}

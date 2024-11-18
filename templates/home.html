@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container" style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; border-radius: 8px; border: 1px solid #ddd;">
+    <h1 style="font-family: Arial, sans-serif; color: #333; text-align: center; margin-bottom: 20px;">Welcome to the Loan Management System</h1>
+
+    <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555; text-align: center;">
+      This is the home page for managing loans, customers, and items. You can perform CRUD operations and view the details of your customers and loans.
+    </p>
+
+    <div class="links" style="margin-top: 30px;">
+      <h3 style="font-family: Arial, sans-serif; color: #333; text-align: center;">Quick Links:</h3>
+      <ul style="list-style-type: none; padding-left: 0; text-align: center;">
+        <li style="margin-bottom: 10px;"><a href="{% url 'customer_list' %}" style="font-family: Arial, sans-serif; font-size: 16px; color: #007BFF; text-decoration: none; font-weight: bold;">View Customers</a></li>
+        <li style="margin-bottom: 10px;"><a href="{% url 'loan_list' %}" style="font-family: Arial, sans-serif; font-size: 16px; color: #007BFF; text-decoration: none; font-weight: bold;">View Loans</a></li>
+        <li style="margin-bottom: 10px;"><a href="{% url 'item_list' %}" style="font-family: Arial, sans-serif; font-size: 16px; color: #007BFF; text-decoration: none; font-weight: bold;">View Items</a></li>
+        <li style="margin-bottom: 10px;"><a href="{% url 'customer_create' %}" style="font-family: Arial, sans-serif; font-size: 16px; color: #007BFF; text-decoration: none; font-weight: bold;">Add Customer</a></li>
+        <li style="margin-bottom: 10px;"><a href="{% url 'loan_list' %}" style="font-family: Arial, sans-serif; font-size: 16px; color: #007BFF; text-decoration: none; font-weight: bold;">Add Loan</a></li>
+        <li style="margin-bottom: 10px;"><a href="{% url 'item_list' %}" style="font-family: Arial, sans-serif; font-size: 16px; color: #007BFF; text-decoration: none; font-weight: bold;">Add Item</a></li>
+        <li style="margin-bottom: 10px;"><a href="{% url 'payment_list' %}" style="font-family: Arial, sans-serif; font-size: 16px; color: #007BFF; text-decoration: none; font-weight: bold;">Payment</a></li>
+
+      </ul>
+    </div>
+  </div>
+{% endblock %}

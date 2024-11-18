@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #ddd;">
+    <h1 style="font-family: Arial, sans-serif; color: #333; text-align: center; margin-bottom: 20px;">
+      Payments
+    </h1>
+
+    <a href="{% url 'payment_create' %}" style="background-color: #28a745; color: white; padding: 10px 20px; font-size: 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-bottom: 20px;">
+      Add Payment
+    </a>
+
+    <ul style="list-style-type: none; padding: 0; font-family: Arial, sans-serif; color: #333;">
+      {% for payment in payments %}
+        <li style="background-color: #fff; margin-bottom: 10px; padding: 10px; border-radius: 4px; border: 1px solid #ddd;">
+          <strong>{{ payment.loan.customer.name }}</strong> - Paid ${{ payment.amount }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
